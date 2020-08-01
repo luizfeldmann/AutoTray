@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1595122975 source:d:\developer\autotray\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<errno.h>
+	<Windows.h>
+	"args.h"
+	<psapi.h>
+	<shlwapi.h>
+
+1595098479 source:d:\developer\autotray\args.c
+	"args.h"
+	<stdio.h>
+	<string.h>
+
+1595098137 d:\developer\autotray\args.h
+
