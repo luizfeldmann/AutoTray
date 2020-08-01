@@ -26,12 +26,12 @@ void windowTaskbarSet(HWND hWnd, int visible)
         //ststyle &= ~(WS_VISIBLE);
     }
 
-    ShowWindow(hWnd, SW_HIDE);
+    //ShowWindow(hWnd, SW_HIDE);
 
     SetWindowLong(hWnd, GWL_EXSTYLE, exstyle);
     //SetWindowLong(hWnd, GWL_STYLE, ststyle);
 
-    ShowWindow(hWnd, SW_SHOW);
+    //ShowWindow(hWnd, SW_SHOW);
 
     ShowWindow(hWnd, visible ? SW_SHOW : SW_HIDE);
 }
@@ -422,6 +422,12 @@ int main(int argc, char* argv[])
         fprintf(stderr, "\nFailed to create tray icon");
         return -1;
     }
+
+    // hide the terminal
+    FreeConsole();
+    HWND console_hWnd = GetConsoleWindow();
+    ShowWindow( console_hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
+    ShowWindow( console_hWnd, SW_HIDE );
 
     // Main process loop
     MSG msg;
